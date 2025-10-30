@@ -19,6 +19,7 @@ import {
 import Testimonials from "../Testimonials";
 import Services from "../Services";
 import HealthPackage from "../Healthpackages";
+import { toast, ToastContainer } from "react-toastify";
 
 interface FormData {
   name: string;
@@ -63,14 +64,17 @@ const Homepage: React.FC = () => {
     try {
       // const baseUrl = "https://pathlab-five.vercel.app";
       // const baseUrl = "http://localhost:3001";
+
       const response = await axios.post("/api/send-email", formData);
       if (response.status !== 200) {
         throw new Error("Failed to insert data");
       }
+      toast.success("Appointment booked Successfully!");
       console.log("Form submitted:", formData);
       setOpenDialog(true);
     } catch (error) {
       console.error("Error inserting data:", error);
+      toast.error("Something went wrong!!");
       // Handle error as needed
     } finally {
       setLoading(false); // Set loading to false regardless of success or failure
@@ -186,18 +190,17 @@ const Homepage: React.FC = () => {
 
   return (
     <>
+      <ToastContainer />
       <div className="overflow-hidden  h-screen w-screen bg-gray-50 text-black">
         <nav className="bg-black p-4 w-screen">
           <div className=" flex justify-between items-center">
             <div className="text-white font-semibold text-xl w-28">
               <img src="/Logo.jpeg" alt="Logo" />
             </div>
-            <Button
-              onClick={openMobileMenu}
-              className="text-white hover:text-gray-200 md:hidden"
-            >
-              Menu
-            </Button>
+
+            <div className="text-white hover:text-gray-200 md:hidden">
+              <button onClick={openMobileMenu}>Menu</button>
+            </div>
             {/* Mobile navigation menu */}
             <Menu
               anchorEl={mobileMenuAnchor}

@@ -32,20 +32,30 @@ export async function POST(req: NextRequest) {
     const { name, address, bookingTime, contactNumber } = body;
     const { flatNumber, buildingNumber, landmark, city } = address;
 
-    const transporter: Transporter = createTransport({
-      host: "smtp-relay.brevo.com",
-      port: 587,
+    // const transporter: Transporter = createTransport({
+    //   host: "smtp-relay.brevo.com",
+    //   port: 587,
+    //   auth: {
+    //     user: "rishisingh122002@gmail.com",
+    //     pass: process.env.BREVO_KEY!,
+    //   },
+    // });
+
+    // Create transporter
+    const transporter = createTransport({
+      service: "gmail",
       auth: {
-        user: "rishisingh122002@gmail.com",
-        pass: process.env.BREVO_KEY!,
+        user: process.env.EMAIL,
+        pass: process.env.PASS,
       },
     });
+
 
     const formatedDate = formatBookingTime(new Date(bookingTime));
 
     const mailOptions: SendMailOptions = {
-      from: "difinepathology@gmail.com", //"rishisingh122002@gmail.com",
-      // to: "guptaayush617@gmail.com",
+      // from: "difinepathology@gmail.com", //"rishisingh122002@gmail.com",
+      from: "guptaayush617@gmail.com",
       to: process.env.EMAIL,
       subject: `A Booking created`,
       html: `<div style="background: white; padding: 20px; max-width: 600px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); border: 1px solid #b2dfdb; margin: 20px auto; padding-bottom: 40px;">
