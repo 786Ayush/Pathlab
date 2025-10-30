@@ -40,7 +40,7 @@ const FAQs: React.FC = () => {
                 FAQs
             </Typography>
             {faqs.map((faq, index) => (
-                <div key={index} className="m-4 md:m-0">
+                <div key={index} className="m-4 lg:m-0">
                     <Accordion key={index} className="mb-4  border border-gray-300 rounded">
                         <AccordionSummary className="bg-gray-100">
                             <Typography variant="h6" className="font-bold">{faq.question}</Typography>

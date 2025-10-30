@@ -312,13 +312,18 @@ const Homepage: React.FC = () => {
           </Button>
         </DialogActions>
       </Dialog>
-      <div
+      {/* <div
         className="min-h-screen w-screen flex flex-col-reverse md:flex-row justify-center items-center bg-gray-50"
         ref={formRef}
       >
         <div className="md:w-1/2 h-full flex justify-center items-center">
-          <div className="w-[80%] m-4 md:m-0  border-2 border-zinc-500">
-            <img src="./formimage.jpg" alt="Form" />
+          <div className="w-[80%] m-4 md:m-0  border-2 border-zinc-500 h-full">
+            
+            <iframe
+              src={`https://maps.google.com/maps?q=28.5141836,77.0464868&hl=en&z=14&t=m&output=embed`}
+              className="w-full h-[50vh]"
+              title="Saved Office Location"
+            ></iframe>
           </div>
         </div>
         <div className="md:w-1/2">
@@ -419,8 +424,128 @@ const Homepage: React.FC = () => {
               </button>
             </div>
           </form>
+        </div> 
+        <div className="md:w-1/2 p-4 bg-gray-50 rounded-2xl shadow-sm">
+          <h2 className="text-2xl font-semibold mb-2 text-gray-800">
+            Pathlab Details
+          </h2>
+
+          
+          <div className="mb-4">
+            <h3 className="font-medium text-gray-700">📍 Address:</h3>
+            <p className="text-gray-600">
+              123 Health Street, Near City Hospital, Sector 45, Gurugram,
+              Haryana - 122003
+            </p>
+          </div>
+
+          
+          <div>
+            <h3 className="font-medium text-gray-700 mb-1">🕒 Timings:</h3>
+            <ul className="text-gray-600 space-y-1">
+              <li>Monday - Friday: 7:00 AM – 8:00 PM</li>
+              <li>Saturday: 8:00 AM – 6:00 PM</li>
+              <li>Sunday: 8:00 AM – 12:00 PM</li>
+            </ul>
+          </div>
+        </div>
+      </div> */}
+      <div
+        className="min-h-screen w-full flex flex-col-reverse md:flex-row items-stretch justify-center bg-gray-50 px-6 py-10 md:py-16"
+        ref={formRef}
+      >
+        {/* Left Section - Google Map */}
+        <div className="md:w-1/2 w-full flex justify-center items-center p-4">
+          <div className="w-full h-full max-w-xl border border-gray-200 rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 bg-white/60 backdrop-blur-lg flex flex-col">
+            <iframe
+              src="https://maps.google.com/maps?q=28.5141836,77.0464868&hl=en&z=14&t=m&output=embed"
+              className="w-full flex-1 rounded-t-3xl"
+              title="Pathlab Location"
+            ></iframe>
+            <div className="bg-white p-4 border-t border-gray-100 text-center">
+              <h3 className="font-semibold text-gray-800 text-lg flex items-center justify-center gap-2">
+                <span>📍</span> View Our Location
+              </h3>
+            </div>
+          </div>
+        </div>
+
+        {/* Right Section - Pathlab Details */}
+        <div className="md:w-1/2 w-full flex justify-center items-center p-4">
+          <div className="w-full h-full max-w-xl p-8 bg-white/70 backdrop-blur-lg rounded-3xl shadow-xl border border-gray-200 hover:shadow-2xl transition-all duration-300 flex flex-col justify-between">
+            <div>
+              <h2 className="text-3xl md:text-4xl font-extrabold mb-8 text-center text-gray-800 tracking-tight">
+                🧪 Pathlab Details
+              </h2>
+
+              {/* Address Section */}
+              <div className="mb-6">
+                <h3 className="font-semibold text-gray-700 text-xl mb-2 flex items-center gap-2">
+                  📍 Address
+                </h3>
+                <p className="text-gray-600 leading-relaxed text-base">
+                  123 Health Street, Near City Hospital, Sector 45, Gurugram,
+                  Haryana – 122003
+                </p>
+              </div>
+
+              {/* Timings Section */}
+              <div className="mb-6">
+                <h3 className="font-semibold text-gray-700 text-xl mb-2 flex items-center gap-2">
+                  🕒 Timings
+                </h3>
+                <ul className="text-gray-600 space-y-2 border-l-4 border-blue-400 pl-4">
+                  <li>
+                    <span className="font-medium">Monday – Friday:</span>{" "}
+                    <span className="font-semibold text-gray-800">
+                      7:00 AM – 8:00 PM
+                    </span>
+                  </li>
+                  <li>
+                    <span className="font-medium">Saturday:</span>{" "}
+                    <span className="font-semibold text-gray-800">
+                      8:00 AM – 6:00 PM
+                    </span>
+                  </li>
+                  <li>
+                    <span className="font-medium">Sunday:</span>{" "}
+                    <span className="font-semibold text-gray-800">
+                      8:00 AM – 12:00 PM
+                    </span>
+                  </li>
+                </ul>
+              </div>
+
+              {/* Contact Info */}
+              <div className="space-y-2">
+                <h3 className="font-semibold text-gray-700 text-xl mb-2 flex items-center gap-2">
+                  📞 Contact
+                </h3>
+                <p className="text-gray-600 text-base">
+                  Call us at:{" "}
+                  <span className="font-semibold text-gray-800">
+                    +91 98765 43210
+                  </span>
+                </p>
+                <p className="text-gray-600 text-base">
+                  Email:{" "}
+                  <span className="font-semibold text-gray-800">
+                    info@pathlabcenter.in
+                  </span>
+                </p>
+              </div>
+            </div>
+
+            {/* CTA Button */}
+            <div className="text-center mt-8">
+              <button className="px-6 py-3 bg-blue-600 text-white font-medium rounded-full shadow hover:bg-blue-700 hover:shadow-lg transition-all duration-300">
+                📅 Book an Appointment
+              </button>
+            </div>
+          </div>
         </div>
       </div>
+
       <hr />
       <div className="bg-gray-50">
         <FAQs />
