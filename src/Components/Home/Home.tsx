@@ -231,7 +231,13 @@ const Homepage: React.FC = () => {
               </li>
               <li>
                 <button
-                  onClick={scrollToForm}
+                  // onClick={scrollToForm}
+                  onClick={() => {
+                    const phoneNumber = "9756573003"; // 👈 replace with your WhatsApp number (use country code, no '+' or spaces)
+                    const message = "Hello! I’d like to book an appointment."; // optional
+                    const url = `https://wa.me/${phoneNumber}`;
+                    window.open(url, "_blank");
+                  }}
                   className="text-white hover:text-gray-200"
                 >
                   Appointment
@@ -255,7 +261,12 @@ const Homepage: React.FC = () => {
               <div>Book an appointment</div>
               <Button
                 variant="contained"
-                onClick={scrollToForm}
+                onClick={() => {
+                  const phoneNumber = "9756573003"; // 👈 replace with your WhatsApp number (use country code, no '+' or spaces)
+                  const message = "Hello! I’d like to book an appointment."; // optional
+                  const url = `https://wa.me/${phoneNumber}`;
+                  window.open(url, "_blank");
+                }}
                 className="bg-[#E82B7B]"
               >
                 Appointment
@@ -484,7 +495,7 @@ const Homepage: React.FC = () => {
                   📍 Address
                 </h3>
                 <p className="text-gray-600 leading-relaxed text-base">
-                  123 Health Street, Near City Hospital, Sector 45, Gurugram,
+                  3023, Sector 23, Gurugram,
                   Haryana – 122003
                 </p>
               </div>
@@ -524,13 +535,13 @@ const Homepage: React.FC = () => {
                 <p className="text-gray-600 text-base">
                   Call us at:{" "}
                   <span className="font-semibold text-gray-800">
-                    +91 98765 43210
+                    +91 9756573003
                   </span>
                 </p>
                 <p className="text-gray-600 text-base">
                   Email:{" "}
                   <span className="font-semibold text-gray-800">
-                    info@pathlabcenter.in
+                    guptaayush617@gmail.com
                   </span>
                 </p>
               </div>
@@ -538,7 +549,15 @@ const Homepage: React.FC = () => {
 
             {/* CTA Button */}
             <div className="text-center mt-8">
-              <button className="px-6 py-3 bg-blue-600 text-white font-medium rounded-full shadow hover:bg-blue-700 hover:shadow-lg transition-all duration-300">
+              <button
+                onClick={() => {
+                  const phoneNumber = "9756573003"; // 👈 replace with your WhatsApp number (use country code, no '+' or spaces)
+                  const message = "Hello! I’d like to book an appointment."; // optional
+                  const url = `https://wa.me/${phoneNumber}`;
+                  window.open(url, "_blank");
+                }}
+                className="px-6 py-3 bg-blue-600 text-white font-medium rounded-full shadow hover:bg-blue-700 hover:shadow-lg transition-all duration-300"
+              >
                 📅 Book an Appointment
               </button>
             </div>
