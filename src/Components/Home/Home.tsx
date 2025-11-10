@@ -138,7 +138,7 @@ const Homepage: React.FC = () => {
   const [bgImageLoaded, setBgImageLoaded] = useState(false);
   useEffect(() => {
     const bgImageInstance = new Image();
-    bgImageInstance.src = "./home.jpg";
+    bgImageInstance.src = "./home.webp";
     bgImageInstance.addEventListener("load", () => {
       setBgImageLoaded(true);
     });
@@ -249,7 +249,7 @@ const Homepage: React.FC = () => {
         <div
           className="hidden md:block h-full bg-cover bg-top w-screen"
           style={{
-            backgroundImage: bgImageLoaded ? "url('./home.jpg')" : "none",
+            backgroundImage: bgImageLoaded ? "url('./home.webp')" : "none",
           }}
         >
           {!bgImageLoaded && (
