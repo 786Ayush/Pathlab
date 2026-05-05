@@ -195,7 +195,13 @@ const Homepage: React.FC = () => {
         <nav className="bg-black p-4 w-screen">
           <div className=" flex justify-between items-center">
             <div className="text-white font-semibold text-xl w-28">
-              <img src="/Logo.jpeg" alt="Logo" />
+              <img
+                src="/Logo.jpeg"
+                alt="Logo"
+                width={120}
+                height={50}
+                className="object-contain"
+              />
             </div>
 
             <div className="text-white hover:text-gray-200 md:hidden">
@@ -247,7 +253,7 @@ const Homepage: React.FC = () => {
           </div>
         </nav>
         <div
-          className="hidden md:block h-full bg-cover bg-top w-screen"
+          className="hidden md:block h-[100vh] bg-cover bg-top w-full"
           style={{
             backgroundImage: bgImageLoaded ? "url('./home.webp')" : "none",
           }}
@@ -495,8 +501,7 @@ const Homepage: React.FC = () => {
                   📍 Address
                 </h3>
                 <p className="text-gray-600 leading-relaxed text-base">
-                  3023, Sector 23, Gurugram,
-                  Haryana – 122003
+                  3023, Sector 23, Gurugram, Haryana – 122003
                 </p>
               </div>
 

@@ -21,6 +21,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="preload" as="image" href="/home.webp" />
+        <link rel="preload" as="image" href="/Logo.jpeg" />
+      </head>
       <body className={inter.className}>{children}</body>
     </html>
   );
