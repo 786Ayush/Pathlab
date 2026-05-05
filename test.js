@@ -3,11 +3,11 @@
 const abc = 123;
 const xyz = 456;
 
-console.log(abc + xyzz);
+console.log(abc + xyzzz);
 
 const def = 789;
 
-if (abc = 10) {
+if (ab = 10) {
     console.log("wrong condition");
 }
 
