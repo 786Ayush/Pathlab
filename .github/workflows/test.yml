@@ -226,7 +226,7 @@ jobs:
             jq -n \
               --rawfile prompt /tmp/prompt.txt \
               '{
-                model: "glm-4",
+                model: "glm-5.1",
                 temperature: 0,
                 messages: [
                   {"role": "system", "content": "You are an automated code reviewer embedded in a CI pipeline. Your reviews are posted as GitHub PR comments seen by the entire engineering team.\n\nCore principles:\n- You catch bugs, not style. You are not a linter or mentor.\n- Every comment you post costs the author time. Only comment when the code is WRONG.\n- If the codebase already does something a certain way, that is an established pattern — do not flag it.\n- An empty review is the correct output for a correct diff."}, 
